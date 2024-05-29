@@ -8,10 +8,12 @@
             v-if="lesson.videoId"
             :videoId="lesson.videoId"
         />
+        <!-- <ClientOnly >        -->
         <LessonCompleteButton 
         :model-value="isLessonComplete"
         @update:model-value="toggleComplete"
         />
+        <!-- </ClientOnly> -->
         <p>{{lesson.text}}</p>
     </div>
 </template>
@@ -37,7 +39,7 @@
 
 
 <script setup>
-import LessonCompleteButton from '~/components/LessonCompleteButton.vue';
+import LessonCompleteButton from '~/components/LessonCompleteButton.client.vue';
 
 
 const course = useCourse();
@@ -63,9 +65,7 @@ useHead({
     title,
 })
 
-const progress = useState('progress',() => {
-    return [];
-});
+const progress = useLocalStorage('progress', []);
 
 const isLessonComplete = computed(() => {
     if (!progress.value[chapter.value.number - 1]) {

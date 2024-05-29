@@ -3,22 +3,23 @@
   <iframe
     width="560"
     height="315"
-    :src="`https://player.vimeo.com/video/${props.videoId}`"
     frameborder="0"
+    src="https://www.youtube.com/results?search_query=chrome+dev+tools";
     allowfullscreen></iframe>
 </template>
 
 <style scoped>
   iframe {
-    width: 100%;
+    width: 90%;
     height: 100%;
+    border-radius: 10px;
   }
 </style>
 
 <script setup>
   const props = defineProps({
     videoId: {
-      type: String,
+      type: Number,
       requuired: true,
     },
   });

@@ -11,7 +11,20 @@
         <div class="chapters">
             
                 <h3>Chapters</h3>
-            
+            <div class="chapter_item"
+            v-for="chapter in chapters"
+            :key="chapter.slug"
+            >
+                <h4>{{ chapter.title }}</h4>
+                <NuxtLink 
+                    v-for="(lesson, index) in chapter.lessons"
+                    :key="lesson.slug"
+                    :to="lesson.path "
+                >
+                    <span>{{ index + 1 }}</span>
+                    {{ lesson.title }}
+                </NuxtLink>
+            </div>
 
         </div>
 
@@ -42,15 +55,24 @@
     column-gap: 10px;
     
 }
-
 .container .chapters {
     background: rgba(54, 54, 46, 0.2);
     min-width: 20ch;
+    height: 100%;
     margin-right: 4px;
     padding: 8px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
     border-radius: 10px;
+    margin: 15px
+}
+.chapters h4 {
+    padding: 15px;;
+}
+.chapters .chapter_item {
+    display: flex;
+    flex-direction: column;
 }
 .container .lesson {
     min-width: 65ch;
@@ -58,6 +80,19 @@
     background: yellowgreen;
     border-radius: 10px;
 }
-
+.router-link-active {
+    color: yellow;
+}
 
 </style>
+
+<script setup>
+const { chapters } = useCourse();
+// const title = computed(() => {
+//     return
+// });
+
+useHead({
+    title:'new title',
+});
+</script>

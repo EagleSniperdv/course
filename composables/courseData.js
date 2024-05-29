@@ -12,7 +12,7 @@ export default {
                     slug: '1-introduction-typescript',
                     number: 1,
                     downloadUrl: '#',
-                    videoId:"https://www.youtube.com/results?search_query=chrome+dev+tools",
+                    videoId:64676,
                     text:`lorem10`
                 },
                 {
@@ -20,7 +20,7 @@ export default {
                     slug: '2-introduction-typescript',
                     number: 1,
                     downloadUrl: '#',
-                    videoId:"https://www.youtube.com/results?search_query=chrome+dev+tools",
+                    videoId:656745,
                     text:`lorem5`
                 },
 
@@ -44,11 +44,11 @@ export default {
                 },
                 {
                     title: 'lesson 2',
-                    slug: '1-introduction-typescript',
+                    slug: '1-introduction-5',
                     number: 1,
                     downloadUrl: '#',
                     videoId:1,
-                    text:`lorem10`
+                    text:`lorem9`
                 },
 
 

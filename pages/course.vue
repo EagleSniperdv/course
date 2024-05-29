@@ -50,12 +50,13 @@
     padding: 8px;
     display: flex;
     justify-content: center;
+    border-radius: 10px;
 }
 .container .lesson {
     min-width: 65ch;
     width: 240px;
     background: yellowgreen;
-
+    border-radius: 10px;
 }
 
 

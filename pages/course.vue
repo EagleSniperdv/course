@@ -30,7 +30,23 @@
         </div>
 
         <div class="lesson">
-            <NuxtPage/>
+            <NuxtErrorBoundary>
+                <NuxtPage/>
+                <template #error="{ error }">
+                    <p>
+                        oh no, something broke!
+                        <code>{{ error }}</code>
+                    </p>
+                    <p>
+                        <button
+                        @click="resetError(error)"
+                        >
+                        Reset
+                        </button>
+                    </p>
+                </template>
+
+            </NuxtErrorBoundary>
         </div>
     </div>
 </template>
@@ -94,11 +110,18 @@ const { chapters } = useCourse();
 //     return
 // });
 
+const resetError = async (error) => {
+    await navigateTo(
+        'http://localhost:3000/course/chapter/1-chapter-1/lesson/1-introduction-typescript'
+    ,{external: true});
+    error.value = null;
+};
+
 useHead({
     title:'new title',
 });
 
-definePageMeta({
-    layout: 'custom',
-})
+// definePageMeta({
+//     layout,
+// })
 </script>

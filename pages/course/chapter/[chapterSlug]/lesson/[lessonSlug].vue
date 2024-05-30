@@ -8,9 +8,15 @@
             v-if="lesson.videoId"
             :videoId="lesson.videoId"
         />
-        <LessonCompleteButton 
+        <!-- <LessonCompleteButton 
         :model-value="isLessonComplete"
         @update:model-value="toggleComplete"
+        /> -->
+        <LessonCompleteButton 
+        :model-value="isLessonComplete"
+        @update:model-value="
+        throw createError('could not Update');
+        "
         />
         <p>{{lesson.text}}</p>
     </div>
@@ -38,6 +44,7 @@
 
 <script setup>
 import LessonCompleteButton from '~/components/LessonCompleteButton.client.vue';
+
 
 
 const course = useCourse();

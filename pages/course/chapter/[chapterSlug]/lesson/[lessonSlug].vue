@@ -8,12 +8,10 @@
             v-if="lesson.videoId"
             :videoId="lesson.videoId"
         />
-        <!-- <ClientOnly >        -->
         <LessonCompleteButton 
         :model-value="isLessonComplete"
         @update:model-value="toggleComplete"
         />
-        <!-- </ClientOnly> -->
         <p>{{lesson.text}}</p>
     </div>
 </template>

@@ -20,6 +20,7 @@
                     v-for="(lesson, index) in chapter.lessons"
                     :key="lesson.slug"
                     :to="lesson.path "
+                    external
                 >
                     <span>{{ index + 1 }}</span>
                     {{ lesson.title }}
@@ -40,11 +41,11 @@
     justify-content: center;
     height: 10vh;
     font-weight: lighter;
-    color: blue;
+    color: rgb(255, 255, 255);
 }
 .header h1 span {
     font-weight: bolder;
-    color: white;
+    color: rgb(243, 16, 16);
 }
 .container {
     width: 100%;
@@ -56,7 +57,7 @@
     
 }
 .container .chapters {
-    background: rgba(54, 54, 46, 0.2);
+    background: rgba(243, 243, 241, 0.7);
     min-width: 20ch;
     height: 100%;
     margin-right: 4px;
@@ -87,6 +88,7 @@
 </style>
 
 <script setup>
+
 const { chapters } = useCourse();
 // const title = computed(() => {
 //     return
@@ -95,4 +97,8 @@ const { chapters } = useCourse();
 useHead({
     title:'new title',
 });
+
+definePageMeta({
+    layout: 'custom',
+})
 </script>

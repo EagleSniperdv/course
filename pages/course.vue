@@ -4,6 +4,7 @@
       Course:
       <span>{{ title }}</span>
     </h1>
+    <userCard />
   </header>
 
   <div class="container">

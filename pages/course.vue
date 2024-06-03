@@ -1,4 +1,5 @@
 <template>
+  <div></div>
   <header class="header">
     <h1>
       Course:
